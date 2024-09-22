@@ -1,0 +1,30 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { formatDateToKoreanString } from "../../utils/dateFormatter";
+
+type Props = CollectionEntry<"blog">;
+
+const {
+  slug,
+  data: { title, description, pubDate, heroImage },
+} = Astro.props;
+---
+
+<article
+  class="post-card flex cursor-pointer transition-transform duration-300 hover:scale-105"
+>
+  <a href={`/post/${slug}`} class="flex w-full">
+    <div class="flex-1 mr-4 flex flex-col">
+      <h2 class="text-lg font-semibold text-gray-800">{title}</h2>
+      <p class="text-gray-600">{description}</p>
+      <time class="text-sm text-gray-500">
+        {formatDateToKoreanString(pubDate)}
+      </time>
+    </div>
+    <img
+      src={heroImage}
+      alt={title}
+      class="w-32 h-32 object-cover rounded-md"
+    />
+  </a>
+</article>
