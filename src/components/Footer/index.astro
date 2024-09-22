@@ -1,0 +1,36 @@
+---
+import { SOCIAL_GITHUB, SOCIAL_GMAIL, SOCIAL_LINKEDIN } from '../../constants';
+import { Github, Linkedin, Mail } from 'lucide-astro';
+
+const SOCIAL_LINK_ICONS_MAP = [
+  {
+    Icon: Github,
+    link: SOCIAL_GITHUB,
+  },
+  {
+    Icon: Linkedin,
+    link: SOCIAL_LINKEDIN,
+  },
+  {
+    Icon: Mail,
+    link: SOCIAL_GMAIL,
+  },
+];
+---
+
+<footer class="bg-white text-black py-8 px-8">
+    <div class="container mx-auto">
+        <ul class="flex justify-center space-x-6">
+            {SOCIAL_LINK_ICONS_MAP.map(({ Icon, link }) => (
+                <li>
+                    <a href={link} target="_blank" rel="noopener noreferrer" class="hover:text-gray-600 transition-colors">
+                        <Icon size="24" color="currentColor" />
+                    </a>
+                </li>
+            ))}
+        </ul>
+    </div>
+    <div class="text-center mt-4">
+        <p>©2024 Dante Kim. All Rights Reserved.</p>
+    </div>
+</footer>
