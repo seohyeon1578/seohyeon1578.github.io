@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import { formatDateToKoreanString } from "../../utils/dateFormatter";
+import FormattedDate from "../FormattedDate/index.astro";
 
 type Props = CollectionEntry<"blog">;
 
@@ -17,9 +17,9 @@ const {
     <div class="flex-1 mr-4 flex flex-col">
       <h2 class="text-lg font-semibold text-gray-800">{title}</h2>
       <p class="text-gray-600">{description}</p>
-      <time class="text-sm text-gray-500">
-        {formatDateToKoreanString(pubDate)}
-      </time>
+      <div class="text-sm text-gray-500">
+        <FormattedDate date={pubDate} />
+      </div>
     </div>
     <img
       src={heroImage}
