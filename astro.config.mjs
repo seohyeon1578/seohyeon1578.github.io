@@ -10,6 +10,6 @@ import tailwind from "@astrojs/tailwind";
 
 export default defineConfig({
   site: "https://seohyeon1578.github.io",
-  base: "blog",
+  base: "/",
   integrations: [mdx(), sitemap(), react(), tailwind()],
 });
