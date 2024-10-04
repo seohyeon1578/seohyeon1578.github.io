@@ -1,0 +1,98 @@
+---
+import type { WorkExperience } from "../../@types/WorkExperience";
+import FormattedDate from "../../components/FormattedDate/index.astro";
+
+type Props = {
+  experiences: WorkExperience[];
+};
+
+const { experiences } = Astro.props;
+---
+
+<ul class="not-prose space-y-2">
+  {
+    experiences.map(({ company, workPeriod, logo, description, roles }) => (
+      <li>
+        <div class="flex space-x-2">
+          <div>
+            <div class="min-w-[40px] min-h-[40px] flex justify-center items-center">
+              <img width={40} height={40} src={logo.src} alt={company} />
+            </div>
+          </div>
+          <div class="flex items-center justify-center flex-col">
+            <div class="w-full grid grid-cols-1">
+              <div class="h-[40px] flex flex-col justify-center mb-2">
+                <strong>{company}</strong>
+                <span class="text-sm text-stone-500">
+                  <FormattedDate
+                    date={workPeriod[0]}
+                    options={{
+                      year: "numeric",
+                      month: "short",
+                    }}
+                  />
+                  ~
+                  {workPeriod[1] ? (
+                    <FormattedDate
+                      date={workPeriod[1]}
+                      options={{
+                        year: "numeric",
+                        month: "short",
+                      }}
+                    />
+                  ) : (
+                    "현재"
+                  )}
+                </span>
+              </div>
+              <div>
+                <span class="text-sm">{description}</span>
+              </div>
+            </div>
+            <div class="w-full">
+              <ul>
+                {roles &&
+                  roles.map(({ title, workPeriod, content }, index) => (
+                    <li class="flex flex-col w-full">
+                      <span class="relative block rounded-full h-2 w-2 bg-gray-300 top-5 -left-8 -mb-2" />
+                      <div
+                        class={`flex flex-col py-2 relative ${roles[index + 1] ? "before:content-['] before:absolute before:bg-gray-300 before:w-[2px] before:h-14 before:top-8 before:-left-[1.8rem]" : ""}`}
+                      >
+                        <strong>{title}</strong>
+                        <span class="text-sm text-stone-500 mb-2">
+                          <FormattedDate
+                            date={workPeriod[0]}
+                            options={{
+                              year: "numeric",
+                              month: "short",
+                            }}
+                          />
+                          ~
+                          {workPeriod[1] ? (
+                            <FormattedDate
+                              date={workPeriod[1]}
+                              options={{
+                                year: "numeric",
+                                month: "short",
+                              }}
+                            />
+                          ) : (
+                            "현재"
+                          )}
+                        </span>
+                        {content && (
+                          <span class="text-sm whitespace-pre-wrap">
+                            {content}
+                          </span>
+                        )}
+                      </div>
+                    </li>
+                  ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </li>
+    ))
+  }
+</ul>

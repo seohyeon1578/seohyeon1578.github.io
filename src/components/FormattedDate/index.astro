@@ -1,11 +1,11 @@
 ---
 import { formatDateToKoreanString } from "../../utils/dateFormatter";
 
-type Props = { date: Date };
+type Props = { date: Date; options?: Intl.DateTimeFormatOptions };
 
-const { date } = Astro.props;
+const { date, options } = Astro.props;
 ---
 
-<time datetime={formatDateToKoreanString(date)}>
-  {formatDateToKoreanString(date)}
+<time datetime={formatDateToKoreanString(date, options)}>
+  {formatDateToKoreanString(date, options)}
 </time>

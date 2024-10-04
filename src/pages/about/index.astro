@@ -1,0 +1,49 @@
+---
+import { Picture } from "astro:assets";
+import Layout from "../../layouts/Layout.astro";
+import SocialLinks from "../../components/SocialLinks/index.astro";
+import WorkExperienceSection from "../../components/WorkExperienceSection/index.astro";
+import ProfileImage from "../../assets/Dante.jpg";
+import { WORK_EXPERIENCE } from "../../constants";
+---
+
+<Layout>
+  <section class="prose max-w-3xl mx-auto mt-6">
+    <article class="flex justify-between items-center space-x-4">
+      <div class="flex-1">
+        <strong class="text-2xl font-bold">안녕하세요!</strong>
+        <p>
+          주석 없이 이해할 수 있는 코드를 작성하기 위해 노력하는 개발자,
+          김서현입니다.
+        </p>
+        <p>
+          읽기 쉬운 코드는 다음에 이 코드를 사용할 개발자에 대한 기본적인
+          예의라고 생각하며, 더욱 읽기 쉽게 작성하기 위해 최선을 다하고
+          있습니다.
+        </p>
+        <p>
+          이미 엉망이던 코드도 남을 탓하기보다 다음 사람을 생각하여 환경을
+          개선하고자 합니다.
+        </p>
+        <p>
+          주로 개발자로 일하면서 겪었던 문제를 해결하는 과정을 블로그에 기록하고
+          있습니다.
+        </p>
+      </div>
+      <div class="not-prose flex justify-around flex-col space-y-4">
+        <img
+          width={164}
+          height={164}
+          src={ProfileImage.src}
+          alt="dante"
+          class="rounded-md object-cover"
+        />
+        <SocialLinks />
+      </div>
+    </article>
+    <article>
+      <h2 class="text-xl font-bold mt-6">Work Experience</h2>
+      <WorkExperienceSection experiences={WORK_EXPERIENCE} />
+    </article>
+  </section>
+</Layout>
