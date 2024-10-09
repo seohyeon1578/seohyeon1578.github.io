@@ -2,6 +2,7 @@
 import { SITE_TITLE, SITE_DESCRIPTION } from "../constants";
 import Header from "../components/Header/index.astro";
 import Footer from "../components/Footer/index.astro";
+import Metatags from "../components/Metatags/index.astro";
 
 import "../styles/tailwind.css";
 
@@ -16,15 +17,7 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
 <!doctype html>
 <html lang="ko">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width" />
-    <meta
-      name="google-site-verification"
-      content="prK6BmE4iKvuqvzBJGSowwg76K1I4GtEAzKGX_BiLSk"
-    />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
+    <Metatags title={title} description={description} />
     <title>{title}</title>
   </head>
   <body>

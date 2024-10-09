@@ -3,9 +3,11 @@ import MissgoLogo from "../assets/companyLogo/missgo-logo.jpg";
 import StartupLogo from "../assets/companyLogo/startup_logo.jpg";
 
 export const SITE_TITLE = "Dante's Blog";
-export const ABOUT_TITLE = "김서현 | Dante Kim | Dante's Blog";
+export const ABOUT_TITLE = `김서현 | Dante Kim | ${SITE_TITLE}`;
 export const SITE_DESCRIPTION =
   "개발일을 하면서 겪은 경험을 기록하는 공간입니다.";
+export const SITE_HOST = "seohyeon1578.github.io";
+export const SITE_URL = `https://${SITE_HOST}`;
 
 export const SOCIAL_GITHUB = "https://github.com/seohyeon1578";
 export const SOCIAL_LINKEDIN =
