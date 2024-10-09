@@ -2,7 +2,7 @@
 title: "Mobile에서 주소창을 숨기는 방법"
 description: "모바일 브라우저에서 주소창을 숨기는 방법에 대해 소개합니다."
 pubDate: "Oct 7 2024"
-heroImage: "/blog-placeholder-4.jpg"
+heroImage: "../../assets/blog/blog-placeholder-4.jpg"
 ---
 
 회사에서 웹앱 작업을 하던 중, Safari에서 주소창이 화면에서 너무 큰 부분을 차지하는 문제가 생겼다. 
