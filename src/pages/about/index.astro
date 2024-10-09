@@ -4,9 +4,10 @@ import SocialLinks from "../../components/SocialLinks/index.astro";
 import WorkExperienceSection from "../../components/WorkExperienceSection/index.astro";
 import ProfileImage from "../../assets/Dante.jpg";
 import { WORK_EXPERIENCE } from "../../constants";
+import { ABOUT_TITLE } from "../../constants";
 ---
 
-<Layout>
+<Layout title={ABOUT_TITLE}>
   <section class="prose max-w-3xl mx-auto mt-6">
     <article class="flex justify-between items-center space-x-4">
       <div class="flex-1">
