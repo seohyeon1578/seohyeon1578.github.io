@@ -16,18 +16,18 @@ export const SOCIAL_GMAIL = "mailto:gseohyeon07@gmail.com";
 export const WORK_EXPERIENCE: WorkExperience[] = [
   {
     company: "(주)미스고",
-    workPeriod: [new Date(2024, 1)],
+    workPeriod: [new Date(2024, 0)],
     logo: MissgoLogo,
     description:
       "미스고는 지도를 기반으로 부동산 경매, 공매에 대한 정보를 제공하며 권리조사, 국공유지, 확장에정 도로, 등기, 건축물대장과 같은 기능들을 통해 부동산과 관련된 기능을 편리하게 사용할 수 있는 서비스를 만들어가고 있는 회사입니다.",
     roles: [
       {
         title: "Lead Software Engineer",
-        workPeriod: [new Date(2024, 9)],
+        workPeriod: [new Date(2024, 8)],
       },
       {
         title: "Software Engineer",
-        workPeriod: [new Date(2024, 1), new Date(2024, 9)],
+        workPeriod: [new Date(2024, 0), new Date(2024, 8)],
         content:
           " - Implemented map features such as search, polygon, animation, etc. that can be used on PC and WebView.\n\
 \n\
@@ -46,14 +46,14 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
   },
   {
     company: "Stealth Mode AI Startup",
-    workPeriod: [new Date(2023, 7), new Date(2023, 12)],
+    workPeriod: [new Date(2023, 6), new Date(2023, 11)],
     logo: StartupLogo,
     description:
       "미국 실리콘밸리에 위치한 스타트업으로 Llama2 AI를 활용한 채팅 서비스를 만들었습니다.",
     roles: [
       {
         title: "Software Engineer",
-        workPeriod: [new Date(2023, 7), new Date(2023, 12)],
+        workPeriod: [new Date(2023, 6), new Date(2023, 11)],
         content:
           " - Spearheaded development efforts from inception, focusing on JWT authentication and socket-based communication.\n\
 \n\
