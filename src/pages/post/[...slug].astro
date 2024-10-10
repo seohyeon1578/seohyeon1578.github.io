@@ -2,6 +2,7 @@
 import { getCollection, type CollectionEntry } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import FormattedDate from "../../components/FormattedDate/index.astro";
+import TableOfContents from "../../components/TableOfContents.astro";
 import { SITE_TITLE } from "../../constants";
 
 export const getStaticPaths = async () => {
@@ -17,15 +18,15 @@ type Props = CollectionEntry<"blog">;
 
 const post = Astro.props;
 
-const { Content } = await post.render();
+const { Content, headings } = await post.render();
 ---
 
 <Layout
   title={`${post.data.title} | ${SITE_TITLE}`}
   description={post.data.description}
 >
-  <section class="prose max-w-3xl mx-auto mt-6">
-    <article class="mb-16 sm:mb-24">
+  <section class="prose relative flex max-w-3xl mx-auto mt-6 gap-4">
+    <article class="mb-16 sm:mb-24 w-full min-w-[700px]">
       <header class="mb-8">
         <h1 class="text-3xl leading-tight sm:text-5xl">
           {post.data.title}
@@ -34,9 +35,11 @@ const { Content } = await post.render();
           <FormattedDate date={post.data.pubDate} />
         </div>
       </header>
+
       <div class="max-w-none prose sm:prose-lg">
         <Content />
       </div>
     </article>
+    <TableOfContents headings={headings} />
   </section>
 </Layout>

@@ -1,0 +1,32 @@
+---
+interface HeadingItem {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+interface Props {
+  headings: HeadingItem[];
+}
+
+const { headings } = Astro.props;
+---
+
+<aside class="sticky top-20 right-0 h-min p-0 w-full bg-inherit mt-4 mb-4">
+  <nav>
+    <ul class="not-prose space-y-2">
+      {
+        headings.map((heading) => (
+          <li class="hover:bg-gray-100 transition-colors duration-200 rounded-md">
+            <a
+              href={`#${heading.slug}`}
+              class={`text-sm ml-${(heading.depth - 1) * 2} whitespace-nowrap`}
+            >
+              {heading.text}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</aside>
