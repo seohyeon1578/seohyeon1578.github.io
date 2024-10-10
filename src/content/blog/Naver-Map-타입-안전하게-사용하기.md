@@ -8,7 +8,7 @@ heroImage: "../../assets/blog/blog-placeholder-3.jpg"
 [naver map api](https://navermaps.github.io/maps.js.ncp/docs/tutorial-2-Getting-Started.html)와 typescript를 함께 사용하면서 겪은 불편한 내용들을 수정한 것입니다.
 
 [@types/navermap](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/navermaps)
-# **Literal Type**
+## **Literal Type**
 기존 mapTypeId는 string타입으로 어떤 문자열이든 들어올 수 있었습니다.
 하지만 mapTypeId는 normal, terrain, staellite, hybrid의 문자열만 인식하여 맵을 변환시켜 주고 있었습니다. 개발자 입장에서는 이것을 확인하려면 공식 [Docs](https://navermaps.github.io/maps.js.ncp/docs/tutorial-3-map-types.example.html)로 가서 직접 확인을 해야하는 불편함이 있었습니다.([~~Map객체에는 적혀있지도 않고요...~~](https://navermaps.github.io/maps.js.ncp/docs/naver.maps.Map.html#toc37__anchor))
 ```typescript
@@ -43,7 +43,7 @@ or
 
 mapTypeId?: naver.maps.MapTypeId.NORMAL;
 ```
-# **JSDoc**
+## **JSDoc**
 이번에는 MapOptions interface에 jsdoc을 추가한 부분인데요.
 이 작업을 한 이유는 Literal Type과 비슷합니다.
 매번 공식 Docs로 가서 해당 옵션이 어떠한 기능을 하는지 확인하기가 귀찮았기 때문입니다.
