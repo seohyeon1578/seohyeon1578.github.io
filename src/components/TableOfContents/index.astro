@@ -19,5 +19,8 @@ const { headings } = Astro.props;
 
 <script>
   import { initTocHighlight } from "../../utils/tocHighlight";
+
   document.addEventListener("DOMContentLoaded", initTocHighlight);
+  document.addEventListener("scroll", initTocHighlight);
+  document.addEventListener("contentChanged", initTocHighlight);
 </script>
