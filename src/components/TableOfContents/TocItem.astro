@@ -1,0 +1,45 @@
+---
+import type { HeadingItem } from "../../types/HeadingItem";
+
+interface Props {
+  heading: HeadingItem;
+}
+
+const { heading } = Astro.props;
+---
+
+<li>
+  <a
+    href={`#${heading.slug}`}
+    class={`text-sm whitespace-nowrap block py-1 pl-3 pr-2 rounded-md transition-all duration-200 hover:text-blue-600 relative
+            before:content-[''] before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-1 before:h-0 before:bg-blue-600 before:transition-all before:duration-200
+            toc-item depth-${heading.depth}`}
+    data-heading={heading.slug}
+  >
+    {heading.text}
+  </a>
+</li>
+
+<style>
+  .toc-item.active {
+    @apply font-bold text-blue-600 before:h-full;
+  }
+  .depth-1 {
+    @apply ml-0;
+  }
+  .depth-2 {
+    @apply ml-2;
+  }
+  .depth-3 {
+    @apply ml-4;
+  }
+  .depth-4 {
+    @apply ml-6;
+  }
+  .depth-5 {
+    @apply ml-8;
+  }
+  .depth-6 {
+    @apply ml-10;
+  }
+</style>

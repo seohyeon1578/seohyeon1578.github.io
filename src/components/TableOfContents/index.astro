@@ -1,0 +1,23 @@
+---
+import TocItem from "./TocItem.astro";
+import type { HeadingItem } from "../../types/HeadingItem";
+
+interface Props {
+  headings: HeadingItem[];
+}
+
+const { headings } = Astro.props;
+---
+
+<aside class="sticky top-20 right-0 h-min p-0 w-full bg-inherit mt-4 mb-4">
+  <nav>
+    <ul class="not-prose space-y-2">
+      {headings.map((heading) => <TocItem heading={heading} />)}
+    </ul>
+  </nav>
+</aside>
+
+<script>
+  import { initTocHighlight } from "../../utils/tocHighlight";
+  document.addEventListener("DOMContentLoaded", initTocHighlight);
+</script>
