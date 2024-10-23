@@ -18,6 +18,17 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
 <html lang="ko">
   <head>
     <Metatags title={title} description={description} />
+    <script
+      type="text/partytown"
+      src="https://www.googletagmanager.com/gtag/js?id=GTM-PRVFH5MK"></script>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "GTM-PRVFH5MK");
+    </script>
     <title>{title}</title>
   </head>
   <body>
