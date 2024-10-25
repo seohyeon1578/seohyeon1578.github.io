@@ -3,20 +3,36 @@ import { getCollection, type CollectionEntry } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import FormattedDate from "../../components/FormattedDate/index.astro";
 import TableOfContents from "../../components/TableOfContents/index.astro";
+import PostPagination from "../../components/PostPagination/index.astro";
 import { SITE_TITLE } from "../../constants";
+import type { BlogPost } from "../../types/BlogTypes";
 
 export const getStaticPaths = async () => {
   const posts = await getCollection("blog");
+  const sortedPosts = posts
+    .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+    .map((post): BlogPost => ({
+      ...post,
+      url: `/post/${post.slug}`,
+    }));
 
-  return posts.map((post) => ({
+  return sortedPosts.map((post, index) => ({
     params: { slug: post.slug },
-    props: post,
+    props: {
+      post,
+      prev: index + 1 < sortedPosts.length ? sortedPosts[index + 1] : null,
+      next: index > 0 ? sortedPosts[index - 1] : null,
+    },
   }));
 };
 
-type Props = CollectionEntry<"blog">;
+type Props = {
+  post: BlogPost;
+  prev: BlogPost | null;
+  next: BlogPost | null;
+};
 
-const post = Astro.props;
+const { post, prev, next } = Astro.props;
 
 const { Content, headings } = await post.render();
 ---
@@ -39,6 +55,8 @@ const { Content, headings } = await post.render();
       <div class="max-w-none prose sm:prose-lg">
         <Content />
       </div>
+
+      <PostPagination prev={prev} next={next} />
     </article>
     <TableOfContents headings={headings} />
   </section>
