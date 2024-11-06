@@ -60,6 +60,12 @@ export default {
               padding: "0.25rem",
               borderRadius: "0.25rem",
             },
+            "code::before": {
+              content: '""',
+            },
+            "code::after": {
+              content: '""',
+            },
             mark: {
               backgroundColor: "#BFDBFE",
               fontWeight: "700",
