@@ -2,7 +2,7 @@
 title: "Dynamic Routes의 대안: Next.js에서의 해결책"
 description: "Next.js의 App router와 Static Exports 조합에서 Dynamic params와 함께 Dynamic routes를 사용할 수 없는 문제를 다룹니다."
 pubDate: "Oct 9 2024"
-heroImage: "../../assets/blog/blog-placeholder-5.jpg"
+heroImage: "../../assets/blog/blog-placeholder-5.webp"
 ---
 
 ## 들어가면서
