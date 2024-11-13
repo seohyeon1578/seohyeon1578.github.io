@@ -1,0 +1,56 @@
+name: Build Test
+
+on:
+  pull_request:
+    types:
+      - synchronize
+      - opened
+      - reopened
+      - ready_for_review
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build Test
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run Danger
+        if: always()
+        run: npx danger ci
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DANGER_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Check code style
+        if: always()
+        run: npm run format:check
+
+      - name: Generate Astro content types
+        run: npm run astro sync
+
+      - name: Type check
+        if: always()
+        run: |
+          if git diff --name-only --diff-filter=d HEAD^1 | grep -q -E "(\.[jt]s$|\.tsx$|^package-lock\.json$|^tsconfig\.json$)"; then
+            NODE_OPTIONS=--max-old-space-size=8192 npm run typecheck
+          fi
+
+      - name: Build check
+        if: always()
+        run: npm run build 

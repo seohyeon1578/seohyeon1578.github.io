@@ -7,7 +7,10 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.3",
@@ -29,6 +32,7 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.15",
+    "danger": "^11.3.1",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1"
   }
