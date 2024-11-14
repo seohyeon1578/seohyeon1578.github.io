@@ -8,8 +8,8 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,md,astro}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,md,astro}\"",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
