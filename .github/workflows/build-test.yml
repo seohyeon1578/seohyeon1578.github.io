@@ -30,9 +30,6 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Generate Astro content types
-        run: npm run astro sync
-
       - name: Build check
         if: always()
         run: npm run build
@@ -41,4 +38,4 @@ jobs:
         if: always()
         run: npx danger ci
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
