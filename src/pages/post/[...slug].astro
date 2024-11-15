@@ -43,7 +43,9 @@ const { Content, headings } = await post.render();
   title={`${post.data.title} | ${SITE_TITLE}`}
   description={post.data.description}
 >
-  <section class="prose relative flex max-w-3xl mx-auto mt-6 px-4 sm:px-6 lg:px-8">
+  <section
+    class="prose relative flex max-w-3xl mx-auto mt-6 px-4 sm:px-6 lg:px-8"
+  >
     <article class="mb-16 sm:mb-24 w-full">
       <header class="mb-8">
         <h1 class="text-2xl sm:text-3xl lg:text-4xl leading-tight font-bold">
@@ -61,10 +63,12 @@ const { Content, headings } = await post.render();
       <PostPagination prev={prev} next={next} />
     </article>
 
-    {headings.length > 0 && (
-      <aside class="hidden lg:block">
-        <TableOfContents headings={headings} />
-      </aside>
-    )}
+    {
+      headings.length > 0 && (
+        <aside class="hidden lg:block">
+          <TableOfContents headings={headings} />
+        </aside>
+      )
+    }
   </section>
 </Layout>
