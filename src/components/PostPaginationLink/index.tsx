@@ -29,7 +29,9 @@ const PostPaginationLink: React.FC<PostPaginationLinkProps> = ({
         <ArrowRight className="w-6 h-6 text-gray-400 group-hover:text-blue-600 transition-colors" />
       )}
     </div>
-    <div className={`flex flex-col ${direction === "prev" ? "items-start" : "items-end"}`}>
+    <div
+      className={`flex flex-col ${direction === "prev" ? "items-start" : "items-end"}`}
+    >
       <span className="text-sm text-gray-500 mb-1">
         {direction === "prev" ? "Previous Post" : "Next Post"}
       </span>
