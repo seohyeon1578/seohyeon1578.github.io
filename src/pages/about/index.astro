@@ -8,11 +8,11 @@ import { ABOUT_TITLE } from "../../constants";
 ---
 
 <Layout title={ABOUT_TITLE}>
-  <section class="prose max-w-3xl mx-auto mt-6">
-    <article class="flex justify-between items-center space-x-4">
-      <div class="flex-1">
-        <strong class="text-2xl font-bold">안녕하세요!</strong>
-        <p>
+  <section class="prose max-w-3xl mx-auto mt-6 px-4 sm:px-6 lg:px-8">
+    <article class="flex flex-col-reverse sm:flex-row sm:justify-between sm:items-center sm:space-x-4 mb-8 sm:mb-12">
+      <div class="flex-1 mt-8 sm:mt-0">
+        <strong class="text-xl sm:text-2xl font-bold block">안녕하세요!</strong>
+        <p class="mt-4">
           주석 없이 이해할 수 있는 코드를 작성하기 위해 노력하는 개발자,
           김서현입니다.
         </p>
@@ -30,19 +30,23 @@ import { ABOUT_TITLE } from "../../constants";
           있습니다.
         </p>
       </div>
-      <div class="not-prose flex justify-around flex-col space-y-4">
-        <img
-          width={164}
-          height={164}
-          src={ProfileImage.src}
-          alt="dante"
-          class="rounded-md object-cover"
-        />
-        <SocialLinks />
+      <div class="not-prose flex flex-col items-center sm:items-start">
+        <div class="w-40 h-40 sm:w-[164px] sm:h-[164px] mb-4">
+          <img
+            width={164}
+            height={164}
+            src={ProfileImage.src}
+            alt="dante"
+            class="w-full h-full rounded-md object-cover"
+          />
+        </div>
+        <div class="flex justify-center w-full">
+          <SocialLinks />
+        </div>
       </div>
     </article>
     <article>
-      <h2 class="text-xl font-bold mt-6">Work Experience</h2>
+      <h2 class="text-xl sm:text-2xl font-bold mt-6">Work Experience</h2>
       <WorkExperienceSection experiences={WORK_EXPERIENCE} />
     </article>
   </section>
