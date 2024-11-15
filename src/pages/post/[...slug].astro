@@ -43,23 +43,32 @@ const { Content, headings } = await post.render();
   title={`${post.data.title} | ${SITE_TITLE}`}
   description={post.data.description}
 >
-  <section class="prose relative flex max-w-3xl mx-auto mt-6 gap-4">
-    <article class="mb-16 sm:mb-24 w-full min-w-[700px]">
+  <section
+    class="prose relative flex max-w-3xl mx-auto mt-6 px-4 sm:px-6 lg:px-8"
+  >
+    <article class="mb-16 sm:mb-24 w-full">
       <header class="mb-8">
-        <h1 class="text-3xl leading-tight sm:text-5xl">
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl leading-tight font-bold">
           {post.data.title}
         </h1>
-        <div class="mt-4 text-sm">
+        <div class="mt-4 text-sm text-gray-600">
           <FormattedDate date={post.data.pubDate} />
         </div>
       </header>
 
-      <div class="max-w-none prose sm:prose-lg">
+      <div class="prose prose-zinc max-w-none sm:prose-lg">
         <Content />
       </div>
 
       <PostPagination prev={prev} next={next} />
     </article>
-    <TableOfContents headings={headings} />
+
+    {
+      headings.length > 0 && (
+        <aside class="hidden lg:block">
+          <TableOfContents headings={headings} />
+        </aside>
+      )
+    }
   </section>
 </Layout>

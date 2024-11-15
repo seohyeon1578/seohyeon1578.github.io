@@ -10,7 +10,11 @@ const posts = (await getCollection("blog")).sort(
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <section class="space-y-6 max-w-3xl mx-auto mt-6">
-    {posts.map((post) => <PostCard {...post} />)}
+  <section
+    class="px-6 sm:px-8 lg:px-12 max-w-3xl mx-auto mt-6 md:mt-8 lg:mt-12"
+  >
+    <div class="grid gap-6 sm:gap-8">
+      {posts.map((post) => <PostCard {...post} />)}
+    </div>
   </section>
 </Layout>
