@@ -10,11 +10,11 @@ interface Props {
 const { prev, next } = Astro.props;
 ---
 
-<nav class="flex justify-between items-stretch mt-24">
-  <div class="w-[48%]">
+<nav class="flex flex-col sm:flex-row justify-between items-stretch mt-24 gap-4 sm:gap-0">
+  <div class="w-full sm:w-[48%]">
     {prev && <PostPaginationLink post={prev} direction="prev" client:load />}
   </div>
-  <div class="w-[48%] flex justify-end">
+  <div class="w-full sm:w-[48%] flex justify-end">
     {next && <PostPaginationLink post={next} direction="next" client:load />}
   </div>
 </nav>

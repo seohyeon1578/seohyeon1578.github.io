@@ -8,31 +8,111 @@ export default {
         DEFAULT: {
           css: {
             h1: {
-              fontSize: "2.25rem",
+              fontSize: '1.875rem',
+              '@screen sm': {
+                fontSize: '2.25rem',
+              },
               fontWeight: "700",
               margin: "1.25rem 0",
             },
             h2: {
-              fontSize: "1.875rem",
+              fontSize: '1.5rem',
+              '@screen sm': {
+                fontSize: '1.875rem',
+              },
               fontWeight: "700",
               margin: "1.25rem 0",
             },
             h3: {
-              fontSize: "1.5rem",
+              fontSize: '1.25rem',
+              '@screen sm': {
+                fontSize: '1.5rem',
+              },
               fontWeight: "700",
               margin: "1.25rem 0",
             },
             h4: {
-              fontSize: "1.25rem",
+              fontSize: '1.125rem',
+              '@screen sm': {
+                fontSize: '1.25rem',
+              },
               fontWeight: "700",
               margin: "1.25rem 0",
             },
             p: {
               color: "#1F2937",
-              fontSize: "1rem",
+              fontSize: '0.9375rem',
+              '@screen sm': {
+                fontSize: '1rem',
+              },
               lineHeight: "1.75rem",
               margin: "0.5rem 0",
             },
+            img: {
+              width: "100%",
+              borderRadius: "0.375rem",
+              margin: "1.5rem 0",
+              '@screen sm': {
+                margin: "2rem 0",
+              },
+            },
+            pre: {
+              padding: "1rem",
+              '@screen sm': {
+                padding: "1.5rem",
+              },
+              fontSize: '0.875rem',
+              '@screen sm': {
+                fontSize: '1rem',
+              },
+              borderRadius: "0.5rem",
+              overflowX: "auto",
+            },
+            code: {
+              backgroundColor: "#BFDBFE",
+              fontSize: '0.875rem',
+              '@screen sm': {
+                fontSize: '1rem',
+              },
+              padding: "0.25rem",
+              borderRadius: "0.25rem",
+            },
+            "ul > li": {
+              margin: "0.75rem 0",
+              '@screen sm': {
+                margin: "1rem 0",
+              },
+              marginLeft: "1rem",
+              fontSize: '0.9375rem',
+              '@screen sm': {
+                fontSize: '1rem',
+              },
+            },
+            "ol > li": {
+              margin: "0.75rem 0",
+              '@screen sm': {
+                margin: "1rem 0",
+              },
+              marginLeft: "1rem",
+              fontSize: '0.9375rem',
+              '@screen sm': {
+                fontSize: '1rem',
+              },
+            },
+            blockquote: {
+              borderLeftWidth: "4px",
+              borderLeftColor: "#3B82F6",
+              paddingLeft: "1rem",
+              '@screen sm': {
+                paddingLeft: "1.25rem",
+              },
+              margin: "1.25rem 0",
+              fontSize: '0.9375rem',
+              '@screen sm': {
+                fontSize: '1rem',
+              },
+            },
+            // 기존 스타일 유지
             del: {
               color: "#1F2937",
               fontSize: "1rem",
@@ -41,24 +121,8 @@ export default {
             strong: {
               fontWeight: "700",
             },
-            img: {
-              width: "100%",
-              borderRadius: "0.375rem",
-            },
-            blockquote: {
-              borderLeftWidth: "4px",
-              borderLeftColor: "#3B82F6",
-              paddingLeft: "1.25rem",
-              margin: "1.25rem 0",
-            },
             "blockquote p": {
               margin: "0.5rem 0",
-            },
-            code: {
-              backgroundColor: "#BFDBFE",
-              fontWeight: "700",
-              padding: "0.25rem",
-              borderRadius: "0.25rem",
             },
             "code::before": {
               content: '""',
@@ -75,24 +139,6 @@ export default {
             a: {
               color: "#3B82F6",
               textDecoration: "underline",
-            },
-            aside: {
-              backgroundColor: "#E5E7EB",
-              padding: "1.25rem",
-              fontSize: "1rem",
-              lineHeight: "1.75rem",
-            },
-            "aside dd": {
-              fontSize: "1rem",
-              lineHeight: "1.75rem",
-              color: "#9CA3AF",
-            },
-            "aside small": {
-              display: "block",
-              fontSize: "1rem",
-              color: "#9CA3AF",
-              textAlign: "right",
-              marginTop: "0.625rem",
             },
             table: {
               borderRadius: "0.375rem",
@@ -116,17 +162,6 @@ export default {
               padding: "0.625rem",
               fontSize: "1rem",
               lineHeight: "1.5rem",
-            },
-            pre: {
-              padding: "0.875rem",
-            },
-            "ul > li": {
-              margin: "1rem 0",
-              marginLeft: "1rem",
-            },
-            "ol > li": {
-              margin: "1rem 0",
-              marginLeft: "1rem",
             },
             small: {
               display: "flex",
