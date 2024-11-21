@@ -2,7 +2,7 @@
 title: "React 리렌더링 최적화"
 description: "React의 리렌더링 최적화 작업을 진행하면서 공부한 내용을 정리하였습니다."
 pubDate: "Oct 6 2024"
-heroImage: "../../assets/blog/blog-placeholder-2.webp"
+heroImage: "../../assets/blog/react-re-rendering-hero.webp"
 ---
 
 React의 리렌더링 최적화 작업을 진행하면서 공부한 내용을 정리하였습니다.

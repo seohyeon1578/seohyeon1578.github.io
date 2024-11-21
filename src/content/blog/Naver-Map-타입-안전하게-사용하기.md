@@ -2,7 +2,7 @@
 title: "Naver Map 타입 안전하게 사용하기"
 description: "naver map api와 typescript를 함께 사용하면서 겪은 불편한 내용들을 수정한 것입니다."
 pubDate: "Oct 6 2024"
-heroImage: "../../assets/blog/blog-placeholder-3.jpg"
+heroImage: "../../assets/blog/naver-map-typescript-guide-hero.jpg"
 ---
 
 [naver map api](https://navermaps.github.io/maps.js.ncp/docs/tutorial-2-Getting-Started.html)와 typescript를 함께 사용하면서 겪은 불편한 내용들을 수정한 것입니다.
