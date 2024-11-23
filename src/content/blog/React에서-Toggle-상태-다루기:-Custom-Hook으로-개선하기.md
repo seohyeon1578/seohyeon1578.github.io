@@ -1,7 +1,7 @@
 ---
 title: "React에서 Toggle 상태 다루기: Custom Hook으로 개선하기"
 description: "React에서 자주 사용되는 toggle 상태를 효율적으로 관리하는 방법에 대해 알아봅니다."
-pubDate: "Dec 1 2024"
+pubDate: "Nov 23 2024"
 heroImage: "../../assets/blog/react-toggle-state-hero.webp"
 ---
 
