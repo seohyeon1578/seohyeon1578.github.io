@@ -6,27 +6,31 @@ const SOCIAL_LINK_ICONS_MAP = [
   {
     Icon: Github,
     link: SOCIAL_GITHUB,
+    label: "GitHub 프로필",
   },
   {
     Icon: Linkedin,
     link: SOCIAL_LINKEDIN,
+    label: "LinkedIn 프로필",
   },
   {
     Icon: Mail,
     link: SOCIAL_GMAIL,
+    label: "이메일 보내기",
   },
 ];
 ---
 
 <ul class="flex justify-center space-x-6">
   {
-    SOCIAL_LINK_ICONS_MAP.map(({ Icon, link }) => (
+    SOCIAL_LINK_ICONS_MAP.map(({ Icon, link, label }) => (
       <li>
         <a
           href={link}
           target="_blank"
           rel="noopener noreferrer"
           class="hover:text-gray-600 transition-colors"
+          aria-label={label}
         >
           <Icon size="24" color="currentColor" />
         </a>
