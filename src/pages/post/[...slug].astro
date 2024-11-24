@@ -44,9 +44,9 @@ const { Content, headings } = await post.render();
   description={post.data.description}
 >
   <section
-    class="prose relative flex max-w-4xl mx-auto mt-6 px-4 sm:px-6 lg:px-8"
+    class="prose relative flex gap-4 max-w-4xl mx-auto mt-6 px-4 sm:px-6 lg:px-8"
   >
-    <article class="mb-16 sm:mb-24 w-full">
+    <article class="mb-16 sm:mb-24 w-full lg:min-w-[720px]">
       <header class="mb-8">
         <h1 class="text-2xl sm:text-3xl lg:text-4xl leading-tight font-bold">
           {post.data.title}
