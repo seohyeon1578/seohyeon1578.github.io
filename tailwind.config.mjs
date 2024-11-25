@@ -124,6 +124,12 @@ export default {
             "blockquote p": {
               margin: "0.5rem 0",
             },
+            "blockquote p::before": {
+              content: '""',
+            },
+            "blockquote p::after": {
+              content: '""',
+            },
             "code::before": {
               content: '""',
             },
@@ -162,7 +168,7 @@ export default {
               padding: "0.625rem",
               fontSize: "1rem",
               lineHeight: "1.5rem",
-            },
+            },            
             small: {
               display: "flex",
               width: "100%",
